@@ -9,9 +9,6 @@ export default defineNuxtConfig({
       },
     },
   },
-  nitro: {
-    preset: 'firebase'
-  },
   app: {
     pageTransition: { name: 'v', mode: 'out-in' },
     head: {
@@ -21,10 +18,19 @@ export default defineNuxtConfig({
   css: ["~/assets/global.css", "animate.css/animate.min.css"],
   modules: [
     "@nuxtjs/tailwindcss",
+    "vuetify-nuxt-module",
     "@vueuse/nuxt",
     ['@pinia/nuxt', { autoImports: ["defineStore", "acceptHMRUpdate"], },]
   ],
   imports: {
     dirs: ['stores'],
+  },
+  vuetify: {
+    moduleOptions: {
+      /* module specific options */
+    },
+    vuetifyOptions: {
+      /* vuetify options */
+    },
   },
 });

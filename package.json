@@ -15,11 +15,15 @@
     "@vueuse/core": "^10.4.1",
     "@vueuse/nuxt": "^10.4.1",
     "nuxt": "^3.7.3",
-    "prettier-plugin-tailwindcss": "^0.5.5"
+    "prettier-plugin-tailwindcss": "^0.5.5",
+    "vuetify-nuxt-module": "^0.5.12"
   },
   "dependencies": {
+    "@headlessui/vue": "^1.7.16",
+    "@heroicons/vue": "^2.0.18",
     "@pinia/nuxt": "^0.4.11",
     "@stomp/stompjs": "^7.0.0",
+    "@tailwindcss/forms": "^0.5.6",
     "@vueuse/components": "^10.4.1",
     "animate.css": "^4.1.1",
     "nuxt-storage": "^1.2.2",
@@ -27,7 +31,7 @@
     "sass": "^1.68.0",
     "sockjs": "^0.3.24",
     "stompjs": "^2.3.3",
-    "vue-tailwind": "^2.5.1",
+    "vue": "^3.3.4",
     "websocket": "^1.0.34"
   }
 }

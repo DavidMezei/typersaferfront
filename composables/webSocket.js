@@ -9,8 +9,7 @@ export function useWebSocket() {
 
   function connect() {
     stompClient = new Client({
-      brokerURL:
-        "ws://dwf-env.eba-gtp3f77z.eu-north-1.elasticbeanstalk.com//subscribe-socket",
+      brokerURL: "ws://localhost:8080/subscribe-socket",
       debug: (str) => {
         console.log(str);
       },
@@ -64,7 +63,7 @@ export function useWebSocket() {
     }
 
   function getText() {
-    fetch("http://dwf-env.eba-gtp3f77z.eu-north-1.elasticbeanstalk.com/text")
+    fetch("http://localhost:8080/text")
       .then((response) => response.json())
       .then((data) => {
         // Handle the response data here
@@ -79,7 +78,7 @@ export function useWebSocket() {
 
   function resetText(text) {
     const data = { text: text };
-    fetch("http://dwf-env.eba-gtp3f77z.eu-north-1.elasticbeanstalk.com/reset-text", {
+    fetch("http://localhost:8080/reset-text", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

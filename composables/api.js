@@ -1,8 +1,7 @@
 import nuxtStorage from "nuxt-storage";
 
 export function useApi() {
-  const baseUrl =
-    "http://dwf-env.eba-gtp3f77z.eu-north-1.elasticbeanstalk.com/api";
+  const baseUrl = "http://localhost:8080/api";
   const mainStore = useMainStore();
 
   function isLoggedIn() {
