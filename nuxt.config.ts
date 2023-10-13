@@ -1,8 +1,5 @@
 export default defineNuxtConfig({
   plugins: [{ src: '~/plugins/nuxt-storage', ssr: false }],
-  routeRules: {
-    '/': { prerender: true},
-  },
   devtools: { enabled: true },
   vite: {
     css: {
