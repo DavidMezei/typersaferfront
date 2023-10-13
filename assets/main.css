@@ -1,0 +1,8 @@
+.page-enter-active, .page-leave-active {
+  transition: all 0.5s;
+}
+
+.page-enter, .page-leave-to /* .page-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: scale(0);
+}
