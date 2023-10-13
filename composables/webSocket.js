@@ -4,12 +4,14 @@ import nuxtStorage from "nuxt-storage";
 
 export function useWebSocket() {
   let stompClient = null;
+
   const multiPlayerStore = useMultiPlayerStore();
   const mainStore = useMainStore();
 
   function connect() {
     stompClient = new Client({
-      brokerURL: "ws://localhost:8080/subscribe-socket",
+      brokerURL:
+        "ws://Dwf-env.eba-gtp3f77z.eu-north-1.elasticbeanstalk.com/subscribe-socket",
       debug: (str) => {
         console.log(str);
       },
@@ -63,7 +65,7 @@ export function useWebSocket() {
     }
 
   function getText() {
-    fetch("http://localhost:8080/text")
+    fetch("http://Dwf-env.eba-gtp3f77z.eu-north-1.elasticbeanstalk.com/text")
       .then((response) => response.json())
       .then((data) => {
         // Handle the response data here
@@ -78,13 +80,16 @@ export function useWebSocket() {
 
   function resetText(text) {
     const data = { text: text };
-    fetch("http://localhost:8080/reset-text", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
+    fetch(
+      "http://Dwf-env.eba-gtp3f77z.eu-north-1.elasticbeanstalk.com/reset-text",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }
+    )
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
