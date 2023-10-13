@@ -11,7 +11,6 @@ const password = ref("");
 const formKey = ref(0);
 mainStore.signUpButton = "Sign Up"
 const signUp = ref(mainStore.signUpButton);
-const loggedIn = ref(nuxtStorage.localStorage.getData("email") ? true : false);
 
 async function saveSignUpDetails() {
   console.log("submitted")
@@ -24,7 +23,7 @@ async function saveSignUpDetails() {
   nuxtStorage.localStorage.setData("email", email.value, 600);
   nuxtStorage.localStorage.setData("name", name.value, 600);
   mainStore.isLoggedIn = true;
-  console.log("Nuxt: "+ nuxtStorage.localStorage.getData("name"));
+
   const user = {
     email: email.value,
     name: name.value,

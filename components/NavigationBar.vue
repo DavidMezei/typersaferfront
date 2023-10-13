@@ -192,7 +192,11 @@ const mainStore = useMainStore();
 
 import nuxtStorage from 'nuxt-storage';
 
-mainStore.name = nuxtStorage.localStorage.getData("name") ? nuxtStorage.localStorage.getData("name") : "Guest";
+if (process.client) {
+  mainStore.name = nuxtStorage.localStorage.getData("name") ? nuxtStorage.localStorage.getData("name") : "Guest";
+}
+
+
 
 const name = computed(() => {
   return mainStore.name;
