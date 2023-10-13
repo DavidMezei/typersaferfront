@@ -6,7 +6,6 @@ const styles = ref("flex flex-col h-screen items-end justify-end");
 
 <template>
     <main>
-      <NavigationBar />
         <div class="flex">
         <div class="w-1/6">
           <div :class="styles">
