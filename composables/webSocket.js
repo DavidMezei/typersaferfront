@@ -11,7 +11,7 @@ export function useWebSocket() {
   function connect() {
     stompClient = new Client({
       brokerURL:
-        "ws://Dwf-env.eba-gtp3f77z.eu-north-1.elasticbeanstalk.com/subscribe-socket",
+        "wss://Dwf-env.eba-gtp3f77z.eu-north-1.elasticbeanstalk.com/subscribe-socket",
       debug: (str) => {
         console.log(str);
       },
