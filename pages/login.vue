@@ -29,7 +29,8 @@ async function saveSignUpDetails() {
     name: name.value,
     password: password.value,
   };
-  if (!signUp) {
+  if (signUp) {
+  
     api.saveUser(user);
   }
   //formKey.value++;

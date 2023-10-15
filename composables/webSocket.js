@@ -65,7 +65,7 @@ export function useWebSocket() {
     }
 
   function getText() {
-    fetch("http://Dwf-env.eba-gtp3f77z.eu-north-1.elasticbeanstalk.com/text")
+    fetch("https://Dwf-env.eba-gtp3f77z.eu-north-1.elasticbeanstalk.com/text")
       .then((response) => response.json())
       .then((data) => {
         // Handle the response data here
@@ -81,7 +81,7 @@ export function useWebSocket() {
   function resetText(text) {
     const data = { text: text };
     fetch(
-      "http://Dwf-env.eba-gtp3f77z.eu-north-1.elasticbeanstalk.com/reset-text",
+      "https://Dwf-env.eba-gtp3f77z.eu-north-1.elasticbeanstalk.com/reset-text",
       {
         method: "POST",
         headers: {
