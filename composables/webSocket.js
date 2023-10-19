@@ -10,8 +10,7 @@ export function useWebSocket() {
 
   function connect() {
     stompClient = new Client({
-      brokerURL:
-        "wss://Dwf-env.eba-gtp3f77z.eu-north-1.elasticbeanstalk.com/subscribe-socket",
+      brokerURL: "wss://api.typesafer.com/subscribe-socket",
       debug: (str) => {
         console.log(str);
       },
@@ -65,7 +64,7 @@ export function useWebSocket() {
     }
 
   function getText() {
-    fetch("https://Dwf-env.eba-gtp3f77z.eu-north-1.elasticbeanstalk.com/text")
+    fetch("https://api.typesafer.com/text")
       .then((response) => response.json())
       .then((data) => {
         // Handle the response data here
@@ -80,16 +79,13 @@ export function useWebSocket() {
 
   function resetText(text) {
     const data = { text: text };
-    fetch(
-      "https://Dwf-env.eba-gtp3f77z.eu-north-1.elasticbeanstalk.com/reset-text",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      }
-    )
+    fetch("https://api.typesafer.com/reset-text", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
