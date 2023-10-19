@@ -30,12 +30,17 @@ onKeyStroke(true, async (e) => {
     if (e.ctrlKey && e.key === "b") {
         if (multiPlayerStore.isNewGame) {
             startNewGame();
+            socket.notifyOtherPlayersToPrepareNewGame();
         } else {
             await refresh();
             socket.resetText(data.value.value);
             prepareNewGame();
+            setTimeout(() => {
+                socket.notifyOtherPlayersToPrepareNewGame();
+            }, 2000);
         }
-        socket.notifyOtherPlayersToPrepareNewGame();
+
+        
     } else {
         if (enableTyping.value) {
         if (e.ctrlKey && e.key === "Backspace") {
