@@ -199,8 +199,10 @@ const isNewGame = computed(() => {
     return multiPlayerStore.isNewGame;
 });
 
-socket.connect();
-socket.getText();
+onMounted(() => {
+    socket.connect();
+    socket.getText();
+});
 
 const players = computed(() => {
     return multiPlayerStore.players;
