@@ -31,6 +31,8 @@ onKeyStroke(true, async (e) => {
         if (multiPlayerStore.isNewGame) {
             startNewGame();
         } else {
+            await refresh();
+            socket.resetText(data.value.value);
             prepareNewGame();
         }
         socket.notifyOtherPlayersToPrepareNewGame();
@@ -140,8 +142,6 @@ async function gameFinished() {
 }
 
 async function prepareNewGame() {
-    await refresh();
-    socket.resetText(data.value.value);
     enableTyping.value = false;
     startMessage.value = "Wait for the game to start!";
     socket.getText();
